@@ -2,7 +2,7 @@
 
 ## Intro
 
-This HowTo guide describes setting up a [Raspberry Pi](http://www.raspberrypi.org/) as a net radio player. Playing net radio was about the only thing I couldn't do with my home theatre syatem that I wanted to do, so this was a pragmatic use for the cheap, small, simple Linux computer. Basically, my Pi now does the same thing that iTunes does on the desk/laptop, or TuneIn Radio and similar apps do on Android and iOS.
+This HowTo guide describes setting up a [Raspberry Pi](http://www.raspberrypi.org/) as a net radio player. Playing net radio was about the only thing I couldn't do with my home theatre system that I wanted to do, so this was a pragmatic use for the cheap, small, simple Linux computer. Basically, my Pi now does the same thing that iTunes does on the desk/laptop, or TuneIn Radio and similar apps do on Android and iOS.
 
 ## Hardware
 
