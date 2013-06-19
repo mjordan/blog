@@ -44,7 +44,7 @@ One final step: I wanted to assign my Pi a stable IP address, so I needed to con
 
 ## Software
 
-You will want to install mpd (Music Player Daemon) and its standard client, mpc. There are many clients for mpd, for all platforms. I chose to install a web interface to mpd so I could control my player from a phone, tablet, or laptop web browser. After trying a couple I chose [MPD Web Remot](https://github.com:tompreston/MPD-Web-Remote) because it looked good and was so easy to set up.
+You will want to install mpd (Music Player Daemon) and its standard client, mpc. There are many clients for mpd, for all platforms. I chose to install a web interface to mpd so I could control my player from a phone, tablet, or laptop web browser. After trying a couple I chose [MPD Web Remote](https://github.com:tompreston/MPD-Web-Remote) because it looked good and was so easy to set up.
 
 Here are the commands you need to run to install all of the software mentioned in the previous paragraph (Apache and PHP are required by MPD Web Remote):
 
