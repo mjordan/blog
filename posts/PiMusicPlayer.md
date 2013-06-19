@@ -46,11 +46,7 @@ That's it. MPD Web Remote requires zero configuration. Any WebKit browser will w
 
 ## Playlists
 
-The hardest part of getting the Pi working as a net radio player is creating playlists.
-
-Look inside .pls files for URLs
-
-/var/lib/mpd/playlists
+The hardest part of getting the Pi working as a net radio player is creating playlists. Playlists group together your net radio station's streaming URLs so they are easier to browse in whatever client you are using, and also let you assign labels to the streams. To create the playlists, you need to ssh into your Pi and create a .m3u file for each playlist. By default, these files live in /var/lib/mpd/playlists on the Pi but this location is configurable in /etc/mdp.conf. Here are three playlist files I use, named CBC.m3u, Jazz.m3u, and SomaFM.m3u respectively:
 
 ```
 #EXTM3U
@@ -75,6 +71,15 @@ http://mp1.somafm.com:2020
 #EXTINF:-1,Space Station Soma
 http://mp2.somafm.com:2666
 ```
+It's not always easy to know which URLs to use for the streams. Some stations, like Soma FM, provide their stream URLs very openly, while others, like CBC, make you work. A useful trick is to look inside playlist files that end in .pls; these usually contain the direct streaming URLs that you want to include in your .m3u playlists used by mpd.
+
+mpd doesn't provide the slick browsability that TuneIn or iTunes do. You need to ssh into your Pi and maintain your playlists using a text editor. mpd is a complex and powerful program and you can waste many hours playing with its options. However, the sample playlists above, and a decent client like MPD Web Remote are all you need to get going.
 
 ## Connecting the Pi to my home theatre receiver
+
+Actually, the biggest challenge in gettin my Pi to play through my home theatre system was connecting it to the receiver. The Pi has two audio outputs, a 3.5 mm headphone-style jack and the HDMI output, which supports digital audio output. Skip the 3.5 mm output, as it apparently provides very poor-quality sound (it outputs 11-bit sound, which according to any gearhead you ask is far inferior to the 16-bit sound that music CDs produce).
+
+My problem was that my reciever is old and doesn't have any HDMI inputs. Not only that, all of my digital audio inputs are in use. The only solution I was able to come up with was to route the HDMI output from the Pi into my TV (a Samsung that has an HDMI audio input), then to run RCA cables from an audio output on the TV into the receiver. Not optimal but still better than the poor sound produced by the 3.5 mm output on the Pi.
+
+Happy listening.
 
