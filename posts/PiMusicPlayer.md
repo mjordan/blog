@@ -6,9 +6,9 @@ This HowTo guide describes setting up a [Raspberry Pi](http://www.raspberrypi.or
 
 ## Hardware
 
-My Raspberry Pi is a Model B. I paid $45 for it from a local vendor (http://www.leeselectronic.com/). Another $8 bought me a translucent plastic case. The only other hardware I needed to procure was an SD card for the operating system/onboard storage and a USB WiFi adapter. I already had a 16 GB SanDisk card and a USB keyboard, and I paid $9 for a TP-Link TL-WN725N at http://ncix.ca. Actually, I also bought a $9 HDMI cable to connect the Pi to my TV (more on that below). Total cost: $71.
+My Raspberry Pi is a Model B. I paid $45 for it from a local vendor (http://www.leeselectronic.com/). Another $8 bought me a translucent plastic case. The only other hardware I needed to procure was an SD card for the operating system/onboard storage and a USB WiFi adapter. I already had a 16 GB SanDisk card and a USB keyboard, and I paid $9 for a TP-Link TL-WN725N USB WiFi adapter at http://ncix.ca. Actually, I also bought a $9 HDMI cable to connect the Pi to my TV (more on that below). Total cost: $71.
 
-The Pi doesn't come with a power supply, but I use the Micro-USB charger from an old LG cellphone. Its output is a standard 5 volt, 700mA. An excellent opportunity to reuse something laying around the house.
+The Pi doesn't come with a power supply, but I used the Micro-USB charger from an old LG cellphone. Its output is a standard 5 volts at 700mA. An excellent opportunity to reuse something laying around the house.
 
 Here is a picture of the Pi without the HDMI cable attaching it to the TV, and without the USB keyboard connected:
 
@@ -24,7 +24,7 @@ Once you have the monitor, keyboard, and network cable plugged in, insert the SD
 
 The first time the Pi boots, a simple configuration menu appears that lets you change the password for the default user (username pi), etc. When you exit the configuration menu, you arrive at a command shell. If you want to see the Pi's graphical user interface, type 'startx' (but you don't need to start the GUI if you just want to install the net radio software).
 
-The Pi doesn't come with an onboard wireless adapter. However, it does have two USB ports. Many USB WiFi adapters work with Raspbian; I chose a TP-Link TL-WN725N because it is very tiny (smaller than a thumbnail) and cheap ($9, you may pay less). To use this adapter you will need to install a driver for it. The installation instructions at https://www.zhujunsan.net/index.php/2013/03/make-tp-link-tl-wn725n-v2-work-on-raspbian/ worked without a glitch, and the wireless adapter works reliably reboot after reboot. To make the wireless interface the default (as opposed to the wired network connection you used earlier), you will need to edit /etc/network/interfaces, and if your wireless network requires authentication like mine does, you will need to add your WPA (or whatever) password to this file as well. My /etc/network/interfaces file looks like this:
+The Pi doesn't come with an onboard wireless adapter. However, it does have two USB ports. Many USB WiFi adapters work with Raspbian; I chose a TP-Link adapter because it is very tiny (smaller than a thumbnail) and cheap ($9, you may pay less). To use this adapter you will need to install a driver for it. The installation instructions at https://www.zhujunsan.net/index.php/2013/03/make-tp-link-tl-wn725n-v2-work-on-raspbian/ worked without a glitch, and the wireless adapter works reliably reboot after reboot. To make the wireless interface the default (as opposed to the wired network connection you used earlier), you will need to edit /etc/network/interfaces, and if your wireless network requires authentication like mine does, you will need to add your WPA (or whatever) password to this file as well. My /etc/network/interfaces file looks like this:
 
 ```
 auto lo
