@@ -61,7 +61,7 @@ That's it. MPD Web Remote requires zero configuration. Any WebKit browser will w
 
 ## Playlists
 
-The hardest part of getting the Pi working as a net radio player is creating playlists. Playlists group together your net radio station's streaming URLs so they are easier to browse in whatever client you are using, and also let you assign labels to the streams. To create the playlists, you need to ssh into your Pi and create a .m3u file for each playlist. By default, these files live in /var/lib/mpd/playlists on the Pi but this location is configurable in /etc/mdp.conf. Here are three playlist files I use, named CBC.m3u, Jazz.m3u, and SomaFM.m3u respectively:
+The hardest part of getting the Pi working as a net radio player is creating playlists. Playlists group together your net radio stations' streaming URLs so they are easier to browse in whatever client you are using, and also let you assign labels to the streams. To create the playlists, you need to ssh into your Pi and create a .m3u file for each playlist. By default, these files live in /var/lib/mpd/playlists on the Pi but this location is configurable in /etc/mdp.conf. Here are three playlist files I use, named CBC.m3u, Jazz.m3u, and SomaFM.m3u respectively:
 
 ```
 #EXTM3U
