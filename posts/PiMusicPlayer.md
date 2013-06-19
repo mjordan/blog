@@ -6,7 +6,7 @@ This HowTo guide describes setting up a [Raspberry Pi](http://www.raspberrypi.or
 
 ## Hardware
 
-My Raspberry Pi is a Model B. I paid $45 for it from a local vendor (http://www.leeselectronic.com/). Another $8 bought me a translucent plastic case. The only other hardware I needed to procure was an SD card for the operating system/onboard storage and a USB WiFi adapter. I already had a 16 GB SanDisk card, and I paid $9 for a TP-Link TL-WN725N at http://ncix.ca. Actually, I also bought a $9 HDMI cable to connect the Pi to my TV (more on that below). Total cost: $71.
+My Raspberry Pi is a Model B. I paid $45 for it from a local vendor (http://www.leeselectronic.com/). Another $8 bought me a translucent plastic case. The only other hardware I needed to procure was an SD card for the operating system/onboard storage and a USB WiFi adapter. I already had a 16 GB SanDisk card and a USB keyboard, and I paid $9 for a TP-Link TL-WN725N at http://ncix.ca. Actually, I also bought a $9 HDMI cable to connect the Pi to my TV (more on that below). Total cost: $71.
 
 The Pi doesn't come with a power supply, but I use the Micro-USB charger from an old LG cellphone. Its output is a standard 5 volt, 700mA. An excellent opportunity to reuse something laying around the house.
 
