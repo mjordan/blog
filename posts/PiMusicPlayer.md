@@ -40,7 +40,7 @@ iface wlan0 inet dhcp
 iface default inet dhcp
 ```
 
-One final step: I wanted to assign my Pi a stable IP address, so I needed to configure my router (a Linksys ERT54G running Tomato) to assign the Pi's MAC address a static IP. Unfortunately, the WiFi adapter's MAC address is not printed anywhere on its packaging, so I needed to get it working and then run ifconfig to get its hardware address, which I registered in my router's static DHCP configuration. Your Pi doesn't need a static IP address to work, but if you want to use your phone or other device with a web browser as a remote, it's convenient to know what IP address to use.
+One final step: I wanted to assign my Pi a stable IP address, so I needed to configure my router (a Linksys ERT54G running Tomato) to assign the Pi's MAC address a static IP. Unfortunately, the WiFi adapter's MAC address is not printed anywhere on its packaging, so I needed to get it working and then run ifconfig to get its hardware address, which I then registered in my router's static DHCP configuration. Your Pi doesn't need a static IP address to get the music to play, but if you want to use your phone or other device with a web browser as a remote, it's convenient to know what IP address to use.
 
 ## Software
 
