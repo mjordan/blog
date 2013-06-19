@@ -20,17 +20,17 @@ The Pi doesn't come with any onboard storage -- you need to supply the SD card. 
 
 To prepare the Pi for booting, you need to connect it to a monitor (I used the HDMI cable I bought to connect it to my TV), and connect a USB keyboard. For the first boot, I recommend connecting the Pi to your router using an Ethernet cable. The network connection will Just Work and you will be able to download the driver for the USB WiFi adapter (link to instructions below).
 
-Once you have the monitor, keyboard, and network cable plugged in, insert the SD card with your OS into the slot on the Pi. Once you've done this, you're ready to boot it. There is no power switch; you boot it by plugging the power supply into the Micro USB connector.
+Once you have the monitor, keyboard, and network cable plugged in, insert the SD card containing your OS into the slot on the Pi. Once you've done this, you're ready to boot it. There is no power switch; you boot it by plugging the power supply into the Micro USB connector.
 
 The first time the Pi boots, a simple configuration menu appears that lets you change the password for the default user (username pi), etc. When you exit the configuration menu, you arrive at a command shell. If you want to see the Pi's graphical user interface, run 'startx' (but you don't need to start the GUI if you just want to install the net radio software).
 
-The Pi doesn't come with an onboard wireless adapter. However, it does come with two USB ports. Many USB WiFi adapters work with Raspbian; I chose a TP-Link TL-WN725N because it is very tiny (smaller than a finger nail) and cheap ($9, you may pay less). To use this adapter you will need to install a driver for it. Installation instructions are at https://www.zhujunsan.net/index.php/2013/03/make-tp-link-tl-wn725n-v2-work-on-raspbian/. The instructions on this page worked without a glitch, and the wireless adapter works reliably reboot after reboot. To make the wireless interface the default (as opposed to the wired network connection you used earlier), you will need to edit /etc/network/interfaces, and if your wireless network requires authentication like mine does, you will need to add your WPA (or whatever) password to this file as well. My /etc/network/interfaces file looks like this:
+The Pi doesn't come with an onboard wireless adapter. However, it does come with two USB ports. Many USB WiFi adapters work with Raspbian; I chose a TP-Link TL-WN725N because it is very tiny (smaller than a thumbnail) and cheap ($9, you may pay less). To use this adapter you will need to install a driver for it. Installation instructions are at https://www.zhujunsan.net/index.php/2013/03/make-tp-link-tl-wn725n-v2-work-on-raspbian/. The instructions on this page worked without a glitch, and the wireless adapter works reliably reboot after reboot. To make the wireless interface the default (as opposed to the wired network connection you used earlier), you will need to edit /etc/network/interfaces, and if your wireless network requires authentication like mine does, you will need to add your WPA (or whatever) password to this file as well. My /etc/network/interfaces file looks like this:
 
 ```
 auto lo
 
 iface lo inet loopback
-#iface eth0 inet dhcp
+# iface eth0 inet dhcp
 
 allow-hotplug wlan0
 auto wlan0
@@ -44,7 +44,7 @@ One final step: I wanted to assign my Pi a stable IP address, so I needed to con
 
 ## Software
 
-Apart from the operating system, you will want to install mpd (Music Player Daemon) and its standard client, mpc. There are many clients for mpd, for all platforms. I chose to install a web interface to mpd so I could control my player from my phone, tablet, and laptop web browser. After trying a couple I chose MPD Web Remote (github.com:tompreston/MPD-Web-Remote) because it looked good and was so easy to set up.
+You will want to install mpd (Music Player Daemon) and its standard client, mpc. There are many clients for mpd, for all platforms. I chose to install a web interface to mpd so I could control my player from my phone, tablet, and laptop web browser. After trying a couple I chose MPD Web Remote (github.com:tompreston/MPD-Web-Remote) because it looked good and was so easy to set up.
 
 Here are the commands you need to run to install all of the software mentioned in the previous paragraph (Apache and PHP are required by MPD Web Remote):
 
@@ -61,7 +61,7 @@ That's it. MPD Web Remote requires zero configuration. Any WebKit browser will w
 
 ## Playlists
 
-The hardest part of getting the Pi working as a net radio player is creating playlists. Playlists group together your net radio stations' streaming URLs so they are easier to browse in whatever client you are using, and also let you assign labels to the streams. To create the playlists, you need to ssh into your Pi and create a .m3u file for each playlist. By default, these files live in /var/lib/mpd/playlists on the Pi but this location is configurable in /etc/mdp.conf. Here are three playlist files I use, named CBC.m3u, Jazz.m3u, and SomaFM.m3u respectively:
+The hardest part of getting the Pi working as a net radio player is creating playlists. Playlists group together your net radio stations' streaming URLs so they are easier to browse in whatever client you are using, and also let you assign labels to the streams. To create the playlists, you need to ssh into your Pi and create an .m3u file for each playlist. By default, these files live in /var/lib/mpd/playlists on the Pi but this location is configurable in /etc/mdp.conf. Here are three playlist files I created, named CBC.m3u, Jazz.m3u, and SomaFM.m3u respectively:
 
 ```
 #EXTM3U
@@ -86,9 +86,11 @@ http://mp1.somafm.com:2020
 #EXTINF:-1,Space Station Soma
 http://mp2.somafm.com:2666
 ```
-It's not always easy to know which URLs to use for the streams. Some stations, like Soma FM, provide their stream URLs very openly, while others, like CBC, make you work. A useful trick is to look inside playlist files that end in .pls; these usually contain the direct streaming URLs that you want to include in your .m3u playlists used by mpd.
+It's not always easy to know which URLs to use for the streams. Some stations, like Soma FM, provide their stream URLs very openly, while others, like CBC, make you hunt around quite a bit. A useful trick is to look inside playlist files that end in .pls; these usually contain the direct streaming URLs that you want to include in your .m3u playlists used by mpd.
 
-mpd doesn't provide the slick browsability that TuneIn or iTunes do. You need to ssh into your Pi and maintain your playlists using a text editor. mpd is a complex and powerful program and you can waste many hours playing with its options. However, the sample playlists above, and a decent client like MPD Web Remote are all you need to get going.
+mpd can also play music files, for example .mp3s. Instead of using URLs in your playlists, you use filesystem paths to the music files. Currently, I am only using my Pi for playing net radio streams, since I can access my music library on my PS3, which is attached to my home theatre receiver.
+
+mpd doesn't provide the slick browsability that TuneIn or iTunes do. You need to ssh into your Pi and maintain your playlists using a text editor. mpd is a complex and powerful program and you can waste many hours learning about its options. However, the sample playlists above, and a decent client like MPD Web Remote are all you need to get going.
 
 Once you have some playlists, point your browser at your MPD-Web-Remote's URL and you should see something similar to the image above.
 
