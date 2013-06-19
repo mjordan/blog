@@ -92,7 +92,16 @@ mpd can also play music files, for example .mp3s. Instead of using URLs in your 
 
 mpd doesn't provide the slick browsability that TuneIn or iTunes do. You need to ssh into your Pi and maintain your playlists using a text editor. mpd is a complex and powerful program and you can waste many hours learning about its options. However, the sample playlists above, and a decent client like MPD Web Remote are all you need to get going.
 
-Once you have some playlists, point your browser at your MPD-Web-Remote's URL and you should see something similar to the image above.
+Once you have some playlists, load them by running the "mpc load" command for each one:
+
+```
+cd /var/lib/mpd/playlists
+mpc load CBC.m3u
+mpc load Jazz.m3u
+mpc load SomaFM.m3u
+```
+
+Point your browser at your MPD-Web-Remote's URL and you should see something similar to the image above.
 
 ## Connecting the Pi to my home theatre receiver
 
