@@ -14,7 +14,7 @@ Here is a picture of the Pi without the HDMI cable attaching it to the TV, and w
 
 ![The Pi](https://dl.dropboxusercontent.com/u/1015702/linked_to/2013-06-05%2020.26.44.jpg)
 
-Setting up the Pi hardware was surprisingly easy. The majority of the setup involved: 1) installing the operating system and 2) installing the the driver for the USB WiFi adapter.
+Setting up the Pi hardware was surprisingly easy. The majority of the work involved: 1) installing the operating system and 2) installing the the driver for the USB WiFi adapter.
 
 The Pi doesn't come with any onboard storage -- you need to supply the SD card. Installing the operating system is as simple as copying the operating system ISO image onto the SD card. The trick is that you need to use a utility that will copy the ISO image and make the SD card bootable. For the operating system, I chose the standard Raspbian "wheezy" Linux distro, which is available at http://www.raspberrypi.org/downloads. To get it on my 16 GB SanDisk SD card, I used http://sourceforge.net/projects/win32diskimager/, which is extremel easy to use. All you need to do is run the program, select the drive letter of your SD card (my PC has a built-in SD card reader), and then select the ISO file. The utility runs for a minute and then tells you your SD card is ready. Similar utilities exist for Linux (e.g., dd) and OSX (e.g., PiWriter).
 
